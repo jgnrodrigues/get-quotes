@@ -1,0 +1,25 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/jobs
+        username: postgres
+        password: p0stw0rd
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            database: quotes
+            username: quotes_user
+            password: quotes_password
+            auto-index-creation: true
+
+    batch:
+        jdbc:
+            initialize-schema: always
+
+batch:
+    collection: quotes
+    size: 200
+    max-count: 5000
+
+quotes-client:
+    url: https://quote-garden.onrender.com/api/v3
