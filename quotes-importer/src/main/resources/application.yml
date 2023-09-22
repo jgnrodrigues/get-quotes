@@ -18,7 +18,7 @@ spring:
 
 batch:
     collection: quotes
-    size: 200
+    page-size: 200
     max-count: 5000
 
 quotes-client:

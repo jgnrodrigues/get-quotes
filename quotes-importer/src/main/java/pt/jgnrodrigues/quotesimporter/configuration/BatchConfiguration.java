@@ -48,7 +48,7 @@ public class BatchConfiguration {
                    ItemProcessor<QuoteDTO, Quote> processor,
                    MongoItemWriter<Quote> writer) {
         return new StepBuilder("quoteStep", jobRepository)
-                    .<QuoteDTO, Quote>chunk(properties.size(), transactionManager)
+                    .<QuoteDTO, Quote>chunk(properties.pageSize(), transactionManager)
                     .reader(reader)
                     .processor(processor)
                     .writer(writer)
@@ -58,7 +58,7 @@ public class BatchConfiguration {
     @Bean
     AbstractPagingItemReader<QuoteDTO> reader(QuoteClient client){
         var reader = new QuotePageReader(client);
-        reader.setPageSize(properties.size());
+        reader.setPageSize(properties.pageSize());
         reader.setMaxItemCount(properties.maxCount());
         return reader;
     }
