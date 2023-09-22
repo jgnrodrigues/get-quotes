@@ -47,12 +47,12 @@ Excluding Spring configurations, the service's configuration properties are the 
 To run tho Quotes Importer, first, start the databases, running the following command, in the root directory:
 
 ```bash
-$ docker compose up -d
+docker compose up -d
 ```
 
 To start the Quotes Importer, run the following command, in the `quotes-importer` directory:
 
 ```bash
-$ ./mvnw spring-boot:run
+./mvnw spring-boot:run
 ```
 
