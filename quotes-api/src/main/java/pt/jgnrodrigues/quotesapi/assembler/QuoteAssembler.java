@@ -23,5 +23,4 @@ public class QuoteAssembler implements RepresentationModelAssembler<Quote, Quote
 
         return model;
     }
-    
 }
