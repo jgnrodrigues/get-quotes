@@ -19,8 +19,8 @@ public class QuoteService {
         return repository.findAll(pageable);
     }
 
-    public Page<Quote> getAllByAuthor(Pageable pageable){
-        return repository.findAllByAuthor(pageable);
+    public Page<Quote> getAllByAuthor(String author, Pageable pageable){
+        return repository.findAllByAuthor(author, pageable);
     }
 
     public Optional<Quote> getQuote(String id){

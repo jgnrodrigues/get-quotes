@@ -8,5 +8,5 @@ import pt.jgnrodrigues.quotesapi.data.Quote;
 
 public interface QuoteRepository extends MongoRepository<Quote, String>{
     
-    Page<Quote> findAllByAuthor(Pageable pageable);
+    Page<Quote> findAllByAuthor(String author, Pageable pageable);
 }
