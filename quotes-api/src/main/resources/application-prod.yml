@@ -1,0 +1,8 @@
+spring:
+    data:
+        mongodb:
+            host: mongo
+            port: 27017
+            database: quotes
+            username: quotes_user
+            password: quotes_password
