@@ -17,7 +17,7 @@ The application architecture is the following:
 - **PostgreSQL**: Database used to save Quotes Importer state information.
 - **Quotes API**: API used to search for quotes.
 
-The Quotes Importer and Quotes API are developed in Java (version 17) and Spring Boot (version 3.1.4) and other modules such as Spring Data MongoDB. Quotes Importer uses Spring Batch, Spring JPA with PostgreSQL driver, and OpenFeign.
+The Quotes Importer and Quotes API are developed in Java (version 17) and Spring Boot (version 3.1.4) and other modules such as Spring Data MongoDB, MapStruct, and Lombok. Quotes Importer also uses Spring Batch, Spring JPA with PostgreSQL driver, and OpenFeign. The Quotes API also uses Spring WebMVC, Spring HATOAS, and Springdoc. To test the Quotes API, it was used JUnit 5, Testcontainers, and REST Assured.
 
 Since that Spring batch does not support MongoDB to save its state out of the box, a SQL database was necessary (in this case PostgreSQL).
 
@@ -86,3 +86,14 @@ To remove the databases' volumes, run the command:
 ```bash
 docker volume rm get-quotes_mongo get-quotes_postgres
 ```
+
+## Development Time
+The task took roughly 16 hours to complete. This time was spent in:
+
+- Quotes Importer development: 6 hours;
+- Quotes API development: 4 hours;
+- Quotes API testing: 3 hours;
+- Building and execution: 1 hour;
+- Documentation: 2 hours.
+
+This task took this amount of time, since that it was needed to recall how to use some modules, such as Spring batch, Spring HATOAS, and Springdoc.
