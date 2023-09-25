@@ -49,6 +49,15 @@ This service is an API that gets the quotes imported by the Quotes Importer.
 ### Endpoints
 To check the API's endpoints, check the [API's documentation](http://localhost:8080/swagger-ui), when this service is running.
 
+### Tests
+No unit tests were created, since that there is no complex business logic in the service, only integrations with the Spring functionalities. However, some integration tests were created, to test the service correct behavior as a whole. 
+
+To run the integration tests, run the following command, in the `quotes-api` directory:
+
+```bash
+./mvnw verify
+```
+
 ## Run
 The following commands were tested in a machine with Linux. To execute them in other OS, it is possible that some modifications are needed.
 
