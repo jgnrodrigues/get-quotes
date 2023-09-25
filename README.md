@@ -43,16 +43,37 @@ Excluding Spring configurations, the service's configuration properties are the 
 | `batch.max-count`       | The maximum number of quotes to import |
 | `quotes-client.url`     | The QuoteGarden URL                    |
 
-### Run
-To run tho Quotes Importer, first, start the databases, running the following command, in the root directory:
+## Quotes API
+This service is an API that gets the quotes imported by the Quotes Importer.
+
+### Endpoints
+To check the API's endpoints, check the [API's documentation](http://localhost:8080/swagger-ui), when this service is running.
+
+## Run
+The following commands were tested in a machine with Linux. To execute them in other OS, it is possible that some modifications are needed.
+
+To run the Quotes API, start the containers in the `docker-compose.yml`, in the root directory:
 
 ```bash
 docker compose up -d
 ```
 
-To start the Quotes Importer, run the following command, in the `quotes-importer` directory:
+After that, to start the Quotes Importer, run the following command, in the `quotes-importer` directory:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
+## Stop & Clean
+
+To stop the containers, run the following command in the root directory:
+
+```bash
+docker compose down
+```
+
+To remove the databases' volumes, run the command:
+
+```bash
+docker volume rm get-quotes_mongo get-quotes_postgres
+```
