@@ -1,7 +1,7 @@
 # Get-Quotes
 
 ## Description
-This application is a quotes' repository. It is split in two services:
+This application is a quotes repository. It is split into two services:
 - Quotes Importer
 - Quotes API
 
@@ -19,11 +19,11 @@ The application architecture is the following:
 
 The Quotes Importer and Quotes API are developed in Java (version 17) and Spring Boot (version 3.1.4) and other modules such as Spring Data MongoDB, MapStruct, and Lombok. Quotes Importer also uses Spring Batch, Spring JPA with PostgreSQL driver, and OpenFeign. The Quotes API also uses Spring WebMVC, Spring HATOAS, and Springdoc. To test the Quotes API, it was used JUnit 5, Testcontainers, and REST Assured.
 
-Since that Spring batch does not support MongoDB to save its state out of the box, a SQL database was necessary (in this case PostgreSQL).
+Since that Spring batch does not support MongoDB to save its state out of the box, a SQL database was necessary (in this case, PostgreSQL).
 
 ## Pre-Requirements
 
-To build and run this project, it is necessary:
+To build and run this project, it is necessary to have:
 
 - Java 17
 - Docker
@@ -50,7 +50,7 @@ This service is an API that gets the quotes imported by the Quotes Importer.
 To check the API's endpoints, check the [API's documentation](http://localhost:8080/swagger-ui), when this service is running.
 
 ### Tests
-No unit tests were created, since that there is no complex business logic in the service, only integrations with the Spring functionalities. However, some integration tests were created, to test the service correct behavior as a whole. 
+No unit tests were created since there is no complex business logic in the service, only integrations with the Spring functionalities. However, some integration tests were created to test the service's correct behavior as a whole. 
 
 To run the integration tests, run the following command, in the `quotes-api` directory:
 
@@ -59,7 +59,7 @@ To run the integration tests, run the following command, in the `quotes-api` dir
 ```
 
 ## Run
-The following commands were tested in a machine with Linux. To execute them in other OS, it is possible that some modifications are needed.
+The following commands were tested on a machine running Linux. To execute them on another OS, it is possible that some modifications are needed.
 
 To run the Quotes API, start the containers in the `docker-compose.yml`, in the root directory:
 
@@ -96,4 +96,7 @@ The task took roughly 16 hours to complete. This time was spent in:
 - Building and execution: 1 hour;
 - Documentation: 2 hours.
 
-This task took this amount of time, since that it was needed to recall how to use some modules, such as Spring batch, Spring HATOAS, and Springdoc.
+This task took this amount of time since it was needed to recall how to use some modules, such as Spring batch, Spring HATOAS, and Springdoc.
+
+## Security
+To simplify this task, the passwords were kept in the configuration files, which are not secure. To secure them, it is needed to save them into a vault (ex: Hashicorp Vault) and load them into the applications, when needed.
