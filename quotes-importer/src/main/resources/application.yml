@@ -18,8 +18,8 @@ spring:
 
 batch:
     collection: quotes
-    page-size: 200
-    max-count: 5000
+    page-size: 500
+    max-count: 50000
 
 quotes-client:
     url: https://quote-garden.onrender.com/api/v3
