@@ -23,17 +23,25 @@ public class QuoteHateoasService {
     public PagedModel<QuoteDTO> getAll(Pageable pageable) {
         Page<Quote> quotes = quoteService.getAll(pageable);
 
-        return pagedAssembler.toModel(quotes, quoteAssembler);
+        return createPagedModel(quotes);
     }
 
     public PagedModel<QuoteDTO> getAllByAuthor(String author, Pageable pageable) {
         Page<Quote> quotes = quoteService.getAllByAuthor(author, pageable);
 
-        return pagedAssembler.toModel(quotes, quoteAssembler);
+        return createPagedModel(quotes);
     }
 
     public Optional<QuoteDTO> getQuote(String id) {
         return quoteService.getQuote(id)
                     .map(quote -> quoteAssembler.toModel(quote));
+    }
+
+    private PagedModel<QuoteDTO> createPagedModel(Page<Quote> page) {
+        if (!page.hasContent()) {
+            return (PagedModel<QuoteDTO>) pagedAssembler.toEmptyModel(page, QuoteDTO.class);
+        }
+
+        return pagedAssembler.toModel(page, quoteAssembler);
     }
 }
