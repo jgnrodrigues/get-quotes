@@ -1,0 +1,23 @@
+[
+    {
+        "quote": "While one finds company in himself and his pursuits, he cannot feel old, no matter what his years may be.",
+        "author": "Amos Bronson Alcott",
+        "genre": "age",
+        "_id": "5eb17aadb69dc744b4e70d6e",
+        "__v": 0
+    },
+    {
+        "quote": "Error is acceptable as long as we are young but one must not drag it along into old age.",
+        "author": "Johann Wolfgang von Goethe",
+        "genre": "age",
+        "_id": "5eb17aadb69dc744b4e70dc3",
+        "__v": 0
+    },
+    {
+        "quote": "Each age, it is found, must write its own books or rather, each generation for the next succeeding.",
+        "author": "Ralph Waldo Emerson",
+        "genre": "age",
+        "_id": "5eb17aadb69dc744b4e70da8",
+        "__v": 0
+    }
+]
